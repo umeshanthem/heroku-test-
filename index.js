@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var add_data = function (line , cb){
-  console.log("umesh");
   fs.appendFile("heroku.txt" , line);
   return cb(null);
 };
@@ -21,7 +20,6 @@ app.get('/', function(request, response) {
 });
 
 app.get('/pro/:id', function(request, response , err) {
-  console.log("umesh--");
   var id = request.params.id;
   add_data(id, function(error){
   
